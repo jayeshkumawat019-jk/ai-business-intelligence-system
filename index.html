@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Business Intelligence System | Industrial ERP & Analytics</title>
+  <meta name="description" content="AI Business Intelligence & Industrial Analytics System for Digital Literacy Project">
+
+  <!-- Favicon SVG Line-Art Crane -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231C1917' stroke-width='2'%3E%3Cpath d='M3 21h18M5 21V3l14 4M5 7h14'/%3E%3C/svg%3E">
+
+  <!-- Pinned CDN Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+  <!-- Modular Stylesheets -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+  <!-- 1. LOGIN SCREEN -->
+  <div id="login-screen" style="display: none; min-height: 100vh; align-items: center; justify-content: center; padding: 1.5rem; background-color: var(--bg-app);">
+    <!-- Injected dynamically by js/auth.js -->
+  </div>
+
+  <!-- 2. MAIN APPLICATION CONTAINER -->
+  <div id="app-container" style="display: none;">
+    <!-- Mobile Sidebar Backdrop Overlay -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- LEFT SIDEBAR NAVIGATION -->
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <div class="brand-icon-box">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="21" x2="21" y2="21"/>
+            <line x1="6" y1="21" x2="6" y2="4"/>
+            <polygon points="6,4 20,8 6,12"/>
+            <line x1="16" y1="7" x2="16" y2="15"/>
+            <rect x="13" y="15" width="6" height="5" rx="1"/>
+          </svg>
+        </div>
+        <div class="brand-info">
+          <span class="brand-title">AI BizIntelligence</span>
+          <span class="brand-subtitle">Industrial Management</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <!-- Group 1: Overview & AI -->
+        <div class="nav-group">
+          <div class="nav-group-title">Overview & Intelligence</div>
+          <ul class="nav-list">
+            <li>
+              <a href="#/dashboard" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+                <span>Dashboard</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/assistant" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><line x1="9" y1="10" x2="15" y2="10"/><line x1="12" y1="7" x2="12" y2="13"/></svg>
+                <span>AI Assistant</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/prediction" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                <span>Predictions</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/comparison" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/></svg>
+                <span>Comparison</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/suggestions" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                <span>AI Suggestions</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/reports" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                <span>Reports</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group 2: Money & Finance -->
+        <div class="nav-group">
+          <div class="nav-group-title">Money & Accounts</div>
+          <ul class="nav-list">
+            <li>
+              <a href="#/sales" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <span>Sales</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/expenses" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>Expenses</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/profit-loss" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                <span>Profit &amp; Loss</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/invoices" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Invoices</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/payments" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                <span>Payments</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/budgets" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                <span>Budgets</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/cashflow" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+                <span>Cash Flow</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/tax" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <span>Tax (GST)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group 3: Stock & People -->
+        <div class="nav-group">
+          <div class="nav-group-title">Stock &amp; Workforce</div>
+          <ul class="nav-list">
+            <li>
+              <a href="#/inventory" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+                <span>Inventory</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/low-stock" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <span>Low Stock</span>
+                <span id="sidebar-lowstock-badge" class="nav-badge" style="display:none;">0</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/customers" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Customers</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/suppliers" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="1" y="3" width="15" height="13" rx="2"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                <span>Suppliers</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/employees" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span>Employees</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group 4: Tools & Planning -->
+        <div class="nav-group">
+          <div class="nav-group-title">Tools &amp; Planning</div>
+          <ul class="nav-list">
+            <li>
+              <a href="#/pricing" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                <span>Pricing Calc</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/import-export" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span>Import &amp; Export</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/reminders" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                <span>Reminders</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/goals" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                <span>Goal Tracker</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Group 5: Data & Documents -->
+        <div class="nav-group">
+          <div class="nav-group-title">Data &amp; Files</div>
+          <ul class="nav-list">
+            <li>
+              <a href="#/documents" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <span>Documents</span>
+              </a>
+            </li>
+            <li>
+              <a href="#/data" class="nav-item">
+                <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span>Import / Export</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- Sidebar Footer -->
+      <div class="sidebar-footer">
+        <div class="user-snippet">
+          <div class="user-avatar">AD</div>
+          <div class="user-details">
+            <span class="user-name">Administrator</span>
+            <span class="user-role">Business Owner</span>
+          </div>
+        </div>
+        <button type="button" class="btn-ghost btn-icon" id="btn-sidebar-logout" title="Sign out" aria-label="Sign out">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN APP SHELL -->
+    <div id="main-wrapper">
+      <!-- TOPBAR -->
+      <header id="topbar">
+        <div class="topbar-left">
+          <button type="button" class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Open Navigation Menu">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="page-breadcrumb" id="page-breadcrumb">Dashboard</div>
+        </div>
+
+        <div class="topbar-search-box">
+          <svg class="search-icon-inside" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" class="topbar-search-input" id="global-search-input" placeholder="Jump to module, invoice, product..." autocomplete="off">
+        </div>
+
+        <div class="topbar-right">
+          <!-- Low Stock Quick Alert -->
+          <a href="#/low-stock" class="topbar-pill-badge pill-lowstock" id="topbar-lowstock-pill" title="Low stock warning" style="display:none;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+            <span id="topbar-lowstock-count">0 items low</span>
+          </a>
+
+          <!-- Reminders Quick Alert -->
+          <a href="#/reminders" class="topbar-pill-badge pill-reminders" id="topbar-reminders-pill" title="Upcoming reminders" style="display:none;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <span id="topbar-reminders-count">0 due</span>
+          </a>
+
+          <!-- Quick Action Assistant Shortcut -->
+          <a href="#/assistant" class="topbar-btn" title="AI Business Assistant" aria-label="AI Business Assistant">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </a>
+        </div>
+      </header>
+
+      <!-- ROUTER MAIN CONTENT -->
+      <main id="router-view" role="main">
+        <!-- Module content dynamically mounted here -->
+      </main>
+    </div>
+  </div>
+
+  <!-- Global Toast Notifications Container -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- Bootstrapper Script -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

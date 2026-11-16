@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 90" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <g class="anim-truck">
+    <!-- Truck Cabin (Front) -->
+    <path d="M 165 65 L 165 42 L 185 42 L 200 52 L 205 65 Z" fill="#DC2626" stroke="#1C1917" stroke-width="2"/>
+    <path d="M 175 46 L 186 46 L 196 54 L 175 54 Z" fill="#DBEAFE" stroke="#1C1917"/>
+    <!-- Exhaust Stack -->
+    <line x1="166" y1="42" x2="166" y2="30" stroke="#78716C" stroke-width="3"/>
+    <!-- Trailer Chassis -->
+    <rect x="50" y="62" width="120" height="6" fill="#1C1917"/>
+    <!-- Shipping Container (40ft Blue) -->
+    <rect x="52" y="24" width="110" height="38" rx="2" fill="#2563EB" stroke="#1C1917" stroke-width="2"/>
+    <!-- Container Corrugation Lines -->
+    <line x1="65" y1="24" x2="65" y2="62" stroke="#1D4ED8" stroke-width="1.5"/>
+    <line x1="78" y1="24" x2="78" y2="62" stroke="#1D4ED8" stroke-width="1.5"/>
+    <line x1="91" y1="24" x2="91" y2="62" stroke="#1D4ED8" stroke-width="1.5"/>
+    <line x1="104" y1="24" x2="104" y2="62" stroke="#1D4ED8" stroke-width="1.5"/>
+    <line x1="117" y1="24" x2="117" y2="62" stroke="#1D4ED8" stroke-width="1.5"/>
+    <line x1="130" y1="24" x2="130" y2="62" stroke="#1D4ED8" stroke-width="1.5"/>
+    <line x1="143" y1="24" x2="143" y2="62" stroke="#1D4ED8" stroke-width="1.5"/>
+    <!-- Wheels -->
+    <g class="anim-truck-wheel">
+      <circle cx="68" cy="72" r="8" fill="#292524" stroke="#1C1917" stroke-width="2"/>
+      <circle cx="68" cy="72" r="3" fill="#EFE8DC"/>
+    </g>
+    <g class="anim-truck-wheel">
+      <circle cx="86" cy="72" r="8" fill="#292524" stroke="#1C1917" stroke-width="2"/>
+      <circle cx="86" cy="72" r="3" fill="#EFE8DC"/>
+    </g>
+    <g class="anim-truck-wheel">
+      <circle cx="150" cy="72" r="8" fill="#292524" stroke="#1C1917" stroke-width="2"/>
+      <circle cx="150" cy="72" r="3" fill="#EFE8DC"/>
+    </g>
+    <g class="anim-truck-wheel">
+      <circle cx="190" cy="72" r="8" fill="#292524" stroke="#1C1917" stroke-width="2"/>
+      <circle cx="190" cy="72" r="3" fill="#EFE8DC"/>
+    </g>
+  </g>
+  <!-- Road Surface -->
+  <line x1="10" y1="80" x2="250" y2="80" stroke="#1C1917" stroke-width="2"/>
+  <line x1="20" y1="85" x2="240" y2="85" stroke="#EAB308" stroke-width="2" stroke-dasharray="8 6"/>
+</svg>

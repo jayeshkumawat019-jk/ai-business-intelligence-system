@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Mast Tower -->
+  <line x1="80" y1="110" x2="80" y2="20" stroke="#1C1917" stroke-width="3"/>
+  <line x1="95" y1="110" x2="95" y2="20" stroke="#1C1917" stroke-width="3"/>
+  <line x1="80" y1="100" x2="95" y2="85" stroke="#78716C"/>
+  <line x1="80" y1="70" x2="95" y2="85" stroke="#78716C"/>
+  <line x1="80" y1="70" x2="95" y2="55" stroke="#78716C"/>
+  <line x1="80" y1="40" x2="95" y2="55" stroke="#78716C"/>
+  <line x1="80" y1="40" x2="95" y2="25" stroke="#78716C"/>
+  <!-- Base Foundation -->
+  <rect x="70" y="110" width="35" height="8" rx="2" fill="#EAB308" stroke="#1C1917"/>
+  <!-- Operator Cabin & Jib Peak -->
+  <rect x="75" y="15" width="22" height="15" rx="2" fill="#FAF8F4" stroke="#1C1917"/>
+  <polygon points="87,15 87,5 120,20" fill="none" stroke="#EAB308" stroke-width="2"/>
+  <!-- Jib Arm (Horizontal) -->
+  <line x1="30" y1="20" x2="270" y2="20" stroke="#EAB308" stroke-width="3"/>
+  <line x1="30" y1="20" x2="87" y2="5" stroke="#78716C" stroke-dasharray="2 2"/>
+  <line x1="87" y1="5" x2="220" y2="20" stroke="#78716C" stroke-dasharray="2 2"/>
+  <!-- Counterweight -->
+  <rect x="30" y="15" width="25" height="12" rx="2" fill="#1C1917"/>
+  <!-- Trolley and Cable -->
+  <g class="anim-crane-trolley">
+    <rect x="180" y="18" width="16" height="6" rx="1" fill="#1C1917"/>
+    <line x1="184" y1="24" x2="184" y2="55" stroke="#57534E" stroke-width="1.5"/>
+    <line x1="192" y1="24" x2="192" y2="55" stroke="#57534E" stroke-width="1.5"/>
+    <!-- Spreader / Hook -->
+    <rect x="180" y="55" width="20" height="4" rx="1" fill="#EAB308" stroke="#1C1917"/>
+    <!-- Shipping Container -->
+    <g class="anim-crane-load">
+      <rect x="172" y="59" width="36" height="22" rx="2" fill="#2563EB" stroke="#1C1917" stroke-width="1.5"/>
+      <line x1="181" y1="59" x2="181" y2="81" stroke="#FAF8F4" stroke-width="1"/>
+      <line x1="190" y1="59" x2="190" y2="81" stroke="#FAF8F4" stroke-width="1"/>
+      <line x1="199" y1="59" x2="199" y2="81" stroke="#FAF8F4" stroke-width="1"/>
+    </g>
+  </g>
+  <!-- Ground Line -->
+  <line x1="10" y1="118" x2="290" y2="118" stroke="#D5D1C8" stroke-dasharray="4 4"/>
+</svg>
